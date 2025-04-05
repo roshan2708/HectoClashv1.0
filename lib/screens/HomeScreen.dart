@@ -1,181 +1,90 @@
-// screens/HomePage.dart
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:hecto_clash_frontend/screens/LeaderBoardScreen.dart';
 import 'package:hecto_clash_frontend/screens/LetsClashScreen.dart';
-import 'package:hecto_clash_frontend/screens/OnlineDuelScreen.dart';
-import 'package:hecto_clash_frontend/screens/duel_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool isMusicOn = true;
+
   @override
   Widget build(BuildContext context) {
-    // Get screen height to ensure proper sizing
     final screenHeight = MediaQuery.of(context).size.height;
-    
+
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity, // Ensure container fills entire screen
-        decoration: BoxDecoration(
-         color: const Color.fromARGB(255, 49, 181, 199),
-        ),
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
-            child: Column(
-              children: [
-                // Top space
-                SizedBox(height: screenHeight * 0.1),
-                
-                // Logo or Game Icon
-                Container(
-                  width: 120,
-                  height: 120,
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    Icons.calculate_rounded,
-                    size: 70,
-                    color: Colors.white,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            children: [
+              SizedBox(height: screenHeight * 0.1),
+              Container(
+                width: 120,
+                height: 120,
+                decoration: BoxDecoration(
+                  color: Color(0xFFF8EDEB),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(Icons.calculate_rounded, size: 70, color: Color(0xFF3B82F6)),
+              ),
+              SizedBox(height: 24),
+              Text(
+                'Hecto Clash',
+                style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold, color: Color(0xFF1F2937)),
+              ),
+              SizedBox(height: 12),
+              Text(
+                'Challenge Your Mathematical Skills',
+                style: TextStyle(fontSize: 18, color: Color(0xFF6B7280)),
+                textAlign: TextAlign.center,
+              ),
+              Spacer(),
+              Container(
+                width: double.infinity,
+                margin: EdgeInsets.only(bottom: 20),
+                child: ElevatedButton(
+                  onPressed: () => Get.to(() => LetsClashScreen()),
+                  child: Text('Let\'s Clash', style: TextStyle(fontSize: 24)),
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                margin: EdgeInsets.only(bottom: 20),
+                child: ElevatedButton(
+                  onPressed: () => Get.to(() => LeaderboardScreen()),
+                  child: Text('Leaderboard', style: TextStyle(fontSize: 24)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFFF8EDEB),
+                    foregroundColor: Color(0xFF3B82F6),
                   ),
                 ),
-                
-                // Title
-                SizedBox(height: 24),
-                Text(
-                  'Hecto Clash',
-                  style: TextStyle(
-                    fontSize: 48,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    shadows: [
-                      Shadow(
-                        color: Colors.black.withOpacity(0.3),
-                        offset: Offset(2, 2),
-                        blurRadius: 4,
-                      ),
-                    ],
-                  ),
-                ),
-                
-                // Subtitle
-                SizedBox(height: 12),
-                Text(
-                  'Challenge Your Mathematical Skills',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.white.withOpacity(0.9),
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                
-                // Spacer to push buttons down
-                Spacer(),
-                
-                // Start Duel Button
-                // Container(
-                //   width: double.infinity,
-                //   margin: EdgeInsets.only(bottom: 20),
-                //   child: ElevatedButton(
-                //     onPressed: () => Get.to(() => DuelScreen()),
-                //     style: ElevatedButton.styleFrom(
-                //       backgroundColor: Colors.green[400],
-                //       padding: EdgeInsets.symmetric(vertical: 16),
-                //       shape: RoundedRectangleBorder(
-                //         borderRadius: BorderRadius.circular(16),
-                //       ),
-                //     ),
-                //     child: Text(
-                //       'Play Offline',
-                //       style: TextStyle(
-                //         fontSize: 24,
-                //         fontWeight: FontWeight.bold,
-                //         color: Colors.white,
-                //       ),
-                //     ),
-                //   ),
-                // ),
-                 Container(
-                  width: double.infinity,
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: ElevatedButton(
-                    onPressed: () => Get.to(() => LetsClashScreen()),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green[400],
-                      padding: EdgeInsets.symmetric(vertical: 16),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
-                    child: Text(
-                      "Let's Clash",
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-                
-                // Leaderboard Button
-                Container(
-                  width: double.infinity,
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: ElevatedButton(
-                    onPressed: () => Get.to(() => LeaderboardScreen()),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.orange[400],
-                      padding: EdgeInsets.symmetric(vertical: 16),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
-                    child: Text(
-                      'Leaderboard',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-                
-                // Settings Button (Optional)
-                Container(
-                  width: double.infinity,
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      // Add settings functionality
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white.withOpacity(0.3),
-                      padding: EdgeInsets.symmetric(vertical: 16),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
-                    child: Text(
-                      'Settings',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-                
-                // Bottom space
-                SizedBox(height: screenHeight * 0.05),
-              ],
-            ),
+              ),
+              SizedBox(height: screenHeight * 0.05),
+            ],
           ),
         ),
+      ),
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Color(0xFFE8F0FE),
+        color: Color(0xFFF8EDEB),
+        buttonBackgroundColor: Color(0xFF3B82F6),
+        height: 60,
+        items: [
+          Icon(isMusicOn ? Icons.music_note : Icons.music_off, size: 30, color: isMusicOn ? Colors.white : Color(0xFF6B7280)),
+          Icon(Icons.exit_to_app, size: 30, color: Colors.white),
+        ],
+        onTap: (index) {
+          setState(() {
+            if (index == 0) isMusicOn = !isMusicOn; // Toggle music (implement in controller)
+            else SystemNavigator.pop();
+          });
+        },
       ),
     );
   }

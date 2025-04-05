@@ -5,8 +5,15 @@ class Puzzle {
   final String sequence;
   int timeLeft = 60;
   final List<String> solutions;
+  String? _userInput; // Private field to store user input
 
   Puzzle(this.sequence, this.solutions);
+
+  // Getter for userInput
+  String? get userInput => _userInput;
+
+  // Setter for userInput
+  set userInput(String? value) => _userInput = value;
 
   String get question => "Solve the puzzle using the sequence: $sequence";
 

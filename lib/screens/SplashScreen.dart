@@ -92,7 +92,7 @@ class _SplashScreenState extends State<SplashScreen>
                       child: Text(
                         "Hecto",
                         style: GoogleFonts.nosifer(
-                          fontSize: 40,
+                          fontSize: 38,
                           
                           color: AppColor.spalshScreen,
                           // shadows: [
@@ -122,7 +122,7 @@ class _SplashScreenState extends State<SplashScreen>
                       child: Text(
                         "Clash",
                         style: GoogleFonts.nosifer(
-                          fontSize: 40,
+                          fontSize: 38,
                          
                          color: AppColor.spalshScreen,
                           // shadows: [

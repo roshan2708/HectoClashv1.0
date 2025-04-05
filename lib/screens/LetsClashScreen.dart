@@ -11,84 +11,33 @@ class LetsClashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Let's Clash",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.black87,
-          ),
-        ),
+        title: Text("Let's Clash", style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF1F2937))),
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
       ),
       body: Container(
         color: Colors.white,
-        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Offline section
-            const Text(
-              "----------- offline -----------",
-              style: TextStyle(
-                color: Color(0xFF8BC34A),
-                fontWeight: FontWeight.w600,
-                letterSpacing: 1.2,
-                fontSize: 16,
-              ),
-            ),
-            const SizedBox(height: 24),
-            // Offline buttons row
+            Text("----------- offline -----------", style: TextStyle(color: Color(0xFF10B981), fontWeight: FontWeight.w600, fontSize: 16)),
+            SizedBox(height: 24),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-              CustomFeatureButton(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const EndlessModeScreen()));
-                },
-                  title: "Endless Mode",
-                  imagePath: "assets/images/endless_mode.png",
-                ),
-                CustomFeatureButton(
-                   onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const BlitzModeScreen()));
-                },
-                  title: "Time Limit",
-                  imagePath: "assets/images/time_limit.png",
-                ),
+                CustomFeatureButton(title: "Endless", imagePath: 'assets/images/endless.jpg', onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EndlessModeScreen()))),
+                CustomFeatureButton(title: "Endless", imagePath: 'assets/images/endless.jpg', onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EndlessModeScreen()))),
               ],
             ),
-            const SizedBox(height: 40),
-            // Online section
-            const Text(
-              "----------- online -----------",
-              style: TextStyle(
-                color: Color(0xFF8BC34A),
-                fontWeight: FontWeight.w600,
-                letterSpacing: 1.2,
-                fontSize: 16,
-              ),
-            ),
-            const SizedBox(height: 24),
-            // Online buttons row
+            SizedBox(height: 40),
+            Text("----------- online -----------", style: TextStyle(color: Color(0xFF10B981), fontWeight: FontWeight.w600, fontSize: 16)),
+            SizedBox(height: 24),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children:  [
-                CustomFeatureButton(
-                   onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const DuelScreen()));
-                },
-                  title: "Random Match",
-                  imagePath: "assets/images/random_match.png",
-                ),
-                CustomFeatureButton(
-                   onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const DuelScreen()));
-                },
-                  title: "Play with Friends",
-                  imagePath: "assets/images/friends.png",
-                ),
+              children: [
+                CustomFeatureButton(title: "Endless", imagePath: 'assets/images/endless.jpg', onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EndlessModeScreen()))),
+                CustomFeatureButton(title: "Endless", imagePath: 'assets/images/endless.jpg', onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EndlessModeScreen()))),
               ],
             ),
           ],
@@ -96,5 +45,22 @@ class LetsClashScreen extends StatelessWidget {
       ),
     );
   }
-}
 
+  Widget _buildFeatureButton(BuildContext context, String title, String imagePath, Widget destination) {
+    return GestureDetector(
+      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => destination)),
+      child: Column(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width * 0.4,
+            height:  MediaQuery.of(context).size.height * 0.4,
+            decoration: BoxDecoration(color: Color(0xFFF8EDEB), borderRadius: BorderRadius.circular(12)),
+            child: Image.asset(imagePath, fit: BoxFit.contain),
+          ),
+          SizedBox(height: 8),
+          Text(title, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF1F2937))),
+        ],
+      ),
+    );
+  }
+}
