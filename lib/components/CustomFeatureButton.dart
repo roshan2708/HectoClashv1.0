@@ -3,20 +3,22 @@ import 'package:flutter/material.dart';
 class CustomFeatureButton extends StatelessWidget {
   final String title;
   final String imagePath;
-  final VoidCallback? onTap; // 👈 Add onTap parameter
+  final VoidCallback? onTap;
 
   const CustomFeatureButton({
     Key? key,
     required this.title,
     required this.imagePath,
-    this.onTap, // 👈 Initialize it here
+    this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final double boxSize = MediaQuery.of(context).size.width * 0.40;
+
     return Container(
-      width: MediaQuery.of(context).size.width * 0.40,
-      height: MediaQuery.of(context).size.width * 0.40,
+      width: boxSize,
+      height: boxSize,
       decoration: BoxDecoration(
         border: Border.all(
           color: const Color(0xFF8BC34A),
@@ -29,35 +31,41 @@ class CustomFeatureButton extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           borderRadius: BorderRadius.circular(20),
-          onTap: onTap, // 👈 Use the provided onTap function
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.31,
-                  height: MediaQuery.of(context).size.width * 0.31,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
+          onTap: onTap,
+          child: Column(
+            children: [
+              Expanded(
+                flex: 3,
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(18)),
                   child: Image.asset(
                     imagePath,
-                    fit: BoxFit.contain,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                 ),
-                const SizedBox(height: 12),
-                Text(
-                  title,
-                  style: const TextStyle(
-                    color: Color(0xFF424242),
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14,
-                    letterSpacing: 0.5,
+              ),
+              Expanded(
+                flex: 1,
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      title,
+                      style: const TextStyle(
+                        color: Color(0xFF424242),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                        letterSpacing: 0.5,
+                      ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

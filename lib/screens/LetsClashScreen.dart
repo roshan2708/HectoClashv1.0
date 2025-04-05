@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hecto_clash_frontend/components/CustomFeatureButton.dart';
 import 'package:hecto_clash_frontend/screens/BlitzMode.dart';
 import 'package:hecto_clash_frontend/screens/EndlessModePage.dart';
+import 'package:hecto_clash_frontend/screens/RandomMatchMode.dart';
 import 'package:hecto_clash_frontend/screens/duel_screen.dart';
 
 class LetsClashScreen extends StatelessWidget {
@@ -26,8 +27,8 @@ class LetsClashScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                CustomFeatureButton(title: "Endless", imagePath: 'assets/images/endless.jpg', onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EndlessModeScreen()))),
-                CustomFeatureButton(title: "Endless", imagePath: 'assets/images/endless.jpg', onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EndlessModeScreen()))),
+                CustomFeatureButton(title: "Endless Mode", imagePath: 'assets/images/endless.jpg', onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EndlessModeScreen()))),
+                CustomFeatureButton(title: "Blitz Mode", imagePath: 'assets/images/blitz.jpg', onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => BlitzModeScreen()))),
               ],
             ),
             SizedBox(height: 40),
@@ -36,8 +37,8 @@ class LetsClashScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                CustomFeatureButton(title: "Endless", imagePath: 'assets/images/endless.jpg', onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EndlessModeScreen()))),
-                CustomFeatureButton(title: "Endless", imagePath: 'assets/images/endless.jpg', onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EndlessModeScreen()))),
+                CustomFeatureButton(title: "Random Match", imagePath: 'assets/images/random.jpg', onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => RandomMatchScreen()))),
+                CustomFeatureButton(title: "Play With Friends", imagePath: 'assets/images/friends.jpg', onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DuelScreen()))),
               ],
             ),
           ],

@@ -62,4 +62,12 @@ class GameController extends GetxController {
       mode: gameMode.value, // Add current mode
     ));
   }
+  void resetGame() {
+  score.value = 0;
+  puzzles.clear();
+  currentPuzzleIndex.value = 0;
+  incorrectAttempts.clear();
+  hints.clear();
+  // Add any other state resets as needed
+}
 }
