@@ -16,10 +16,7 @@ class ResultsScreen extends StatelessWidget {
   final Color textColor = Color(0xFF2D3748); // Dark gray
   final Color lightTextColor = Color(0xFF6B7280); // Medium gray
 
-  void _resetAndGoBack() {
-    gameController.resetGame(); // Reset game state
-    Get.back();
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -52,11 +49,7 @@ class ResultsScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  IconButton(
-                    icon: Icon(Icons.arrow_back_ios,
-                        color: secondaryColor, size: 20 * scaleFactor),
-                    onPressed: _resetAndGoBack, // Reset and go back
-                  ),
+                
                   Text(
                     '$modeTitle Results',
                     style: TextStyle(
