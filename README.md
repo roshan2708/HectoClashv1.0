@@ -66,35 +66,6 @@ In Duel Mode, get a hint after one wrong attempt.
 Review Results: After finishing, view your score, accuracy, and puzzle details.
 Play Again: Reset and restart from the results screen.
 
-Project Structure
-Here’s an overview of the project’s file structure:
-
-hectoclash/
-├── lib/
-│   ├── controllers/
-│   │   └── GameController.dart  # Manages game logic, scores, and state
-│   ├── models/
-│   │   ├── game_model.dart      # Defines GameMode and GameResult
-│   │   └── puzzle.dart          # Puzzle model with question and solution logic
-│   ├── screens/
-│   │   ├── EndlessModeScreen.dart  # Endless mode UI and logic
-│   │   ├── RandomMatchScreen.dart  # Duel mode UI and logic
-│   │   ├── ResultScreen.dart       # Results display screen
-│   │   └── LeaderBoardScreen.dart  # Leaderboard screen (placeholder)
-│   ├── components/
-│   │   └── CustomHeader.dart       # Reusable header widget (if applicable)
-│   └── main.dart                   # App entry point
-├── pubspec.yaml                    # Dependencies and metadata
-└── README.md                       # This file
-Key Files
-GameController.dart: Central controller using GetX for state management. Tracks score, puzzles, hints, and game mode.
-puzzle.dart: Defines the Puzzle class with methods like isSolutionValid() and getSampleSolution().
-EndlessModeScreen.dart: Implements the endless mode with a numpad and score display.
-RandomMatchScreen.dart: Handles duel mode with a timer, hints, and animations.
-ResultScreen.dart: Shows detailed game stats and a "Play Again" option.
-Dependencies
-The project relies on the following Flutter packages (add these to pubspec.yaml):
-
 yaml
 dependencies:
   flutter:
@@ -118,11 +89,6 @@ Make Changes: Implement your feature or fix.
 Commit and Push:
 bash
 
-Collapse
-
-Wrap
-
-Copy
 git add .
 git commit -m "Add your message"
 git push origin feature/your-feature-name
