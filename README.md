@@ -35,34 +35,20 @@ Device/Emulator: Android (API 21+) or iOS (12.0+) device/emulator.
 Steps
 Clone the Repository:
 bash
-
-Collapse
-
-Wrap
-
 Copy
-git clone https://github.com/your-username/hectoclash.git
+git clone https://github.com/roshan2708/HectoClashv1.0
 cd hectoclash
 Install Dependencies: Ensure you have a pubspec.yaml file with required dependencies (see ). Then run:
 bash
 
-Collapse
-
-Wrap
-
-Copy
 flutter pub get
 Set Up Emulator/Device:
 For Android: Open an emulator via Android Studio or connect a physical device with USB debugging enabled.
 For iOS: Use an iOS simulator or connect an iPhone (requires Xcode on macOS).
+
 Run the App:
 bash
 
-Collapse
-
-Wrap
-
-Copy
 flutter run
 Select your target device if prompted.
 Build for Release (optional):
@@ -79,16 +65,10 @@ Submit your solution with the "Submit" button.
 In Duel Mode, get a hint after one wrong attempt.
 Review Results: After finishing, view your score, accuracy, and puzzle details.
 Play Again: Reset and restart from the results screen.
+
 Project Structure
 Here’s an overview of the project’s file structure:
 
-text
-
-Collapse
-
-Wrap
-
-Copy
 hectoclash/
 ├── lib/
 │   ├── controllers/
@@ -116,12 +96,6 @@ Dependencies
 The project relies on the following Flutter packages (add these to pubspec.yaml):
 
 yaml
-
-Collapse
-
-Wrap
-
-Copy
 dependencies:
   flutter:
     sdk: flutter
@@ -134,22 +108,11 @@ We welcome contributions to make HectoClash even better! Here’s how to get sta
 
 Fork the Repository: Click "Fork" on GitHub.
 Clone Your Fork:
-bash
-
-Collapse
-
-Wrap
 
 Copy
-git clone https://github.com/your-username/hectoclash.git
+git clone https://github.com/roshan2708/HectoClashv1.0.git
 Create a Branch:
 bash
-
-Collapse
-
-Wrap
-
-Copy
 git checkout -b feature/your-feature-name
 Make Changes: Implement your feature or fix.
 Commit and Push:
@@ -171,16 +134,9 @@ Document any new features in this README.
 License
 This project is licensed under the MIT License. See the  file for details.
 
-text
-
-Collapse
-
-Wrap
-
-Copy
 MIT License
 
-Copyright (c) 2023 Your Name
+Copyright (c) 2023 Roshan Singh
 
 Permission is hereby granted, free of charge, to any person obtaining a copy...
 Contact
