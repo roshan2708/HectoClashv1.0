@@ -1,16 +1,190 @@
 # hecto_clash_frontend
+HectoClash
 
-A new Flutter project.
+HectoClash is an engaging, math-based puzzle game built with Flutter. It challenges players with endless sequences, timed duels, and competitive leaderboards, offering a fun way to test and improve problem-solving skills. Developed as a cross-platform mobile application, HectoClash supports both Android and iOS devices.
 
-## Getting Started
+Table of Contents
+Features
+HectoClash offers three exciting game modes, each designed to keep players hooked:
 
-This project is a starting point for a Flutter application.
+Endless Mode: Solve an unlimited series of puzzles at your own pace. Perfect for practice and relaxation.
+Duel Mode: Face off in a 5-puzzle challenge with a timer. Get hints after incorrect attempts, but hurry—time’s ticking!
+Blitz Mode: Coming soon! A fast-paced mode for quick reflexes and sharp minds.
+Additional features:
 
-A few resources to get you started if this is your first Flutter project:
+Score Tracking: Earn points for correct answers and track your performance.
+Results Screen: Review your game stats, including puzzles solved, accuracy, and time taken.
+Leaderboard: Compete with others and climb the ranks (integration pending).
+Responsive UI: Sleek, premium design with a consistent color palette across modes.
+Cross-Platform: Runs seamlessly on Android and iOS.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+		![WhatsApp Image 2025-04-06 at 12 51 46](https://github.com/user-attachments/assets/0fce0666-64a1-4fe3-b5eb-c4eb2eb9b1ba)
+![WhatsApp Image 2025-04-06 at 12 51 46 (1)](https://github.com/user-attachments/assets/60654a08-b5c2-4336-83c6-43bcc8f38970)
+![WhatsApp Image 2025-04-06 at 12 51 46 (2)](https://github.com/user-attachments/assets/f8c864cd-e80b-42b6-b509-67a1b966be27)
+
+Solve puzzles endlessly	Race against the clock	Analyze your performance
+Note: Replace placeholder images with actual screenshots of your app.
+
+Installation
+Prerequisites
+Flutter SDK: Version 3.10.0 or higher (stable channel recommended).
+Dart: Comes with Flutter (version 3.0.0+ recommended).
+IDE: Android Studio, VS Code, or any Flutter-supported editor.
+Device/Emulator: Android (API 21+) or iOS (12.0+) device/emulator.
+Steps
+Clone the Repository:
+bash
+
+Collapse
+
+Wrap
+
+Copy
+git clone https://github.com/your-username/hectoclash.git
+cd hectoclash
+Install Dependencies: Ensure you have a pubspec.yaml file with required dependencies (see ). Then run:
+bash
+
+Collapse
+
+Wrap
+
+Copy
+flutter pub get
+Set Up Emulator/Device:
+For Android: Open an emulator via Android Studio or connect a physical device with USB debugging enabled.
+For iOS: Use an iOS simulator or connect an iPhone (requires Xcode on macOS).
+Run the App:
+bash
+
+Collapse
+
+Wrap
+
+Copy
+flutter run
+Select your target device if prompted.
+Build for Release (optional):
+Android: flutter build apk --release
+iOS: flutter build ios --release (requires Xcode setup).
+Usage
+Launch the App: Start HectoClash on your device/emulator.
+Choose a Mode:
+Endless Mode: Tap to start solving puzzles with no time limit.
+Duel Mode: Begin a 5-puzzle duel with a countdown timer.
+Play:
+Use the numpad to input answers.
+Submit your solution with the "Submit" button.
+In Duel Mode, get a hint after one wrong attempt.
+Review Results: After finishing, view your score, accuracy, and puzzle details.
+Play Again: Reset and restart from the results screen.
+Project Structure
+Here’s an overview of the project’s file structure:
+
+text
+
+Collapse
+
+Wrap
+
+Copy
+hectoclash/
+├── lib/
+│   ├── controllers/
+│   │   └── GameController.dart  # Manages game logic, scores, and state
+│   ├── models/
+│   │   ├── game_model.dart      # Defines GameMode and GameResult
+│   │   └── puzzle.dart          # Puzzle model with question and solution logic
+│   ├── screens/
+│   │   ├── EndlessModeScreen.dart  # Endless mode UI and logic
+│   │   ├── RandomMatchScreen.dart  # Duel mode UI and logic
+│   │   ├── ResultScreen.dart       # Results display screen
+│   │   └── LeaderBoardScreen.dart  # Leaderboard screen (placeholder)
+│   ├── components/
+│   │   └── CustomHeader.dart       # Reusable header widget (if applicable)
+│   └── main.dart                   # App entry point
+├── pubspec.yaml                    # Dependencies and metadata
+└── README.md                       # This file
+Key Files
+GameController.dart: Central controller using GetX for state management. Tracks score, puzzles, hints, and game mode.
+puzzle.dart: Defines the Puzzle class with methods like isSolutionValid() and getSampleSolution().
+EndlessModeScreen.dart: Implements the endless mode with a numpad and score display.
+RandomMatchScreen.dart: Handles duel mode with a timer, hints, and animations.
+ResultScreen.dart: Shows detailed game stats and a "Play Again" option.
+Dependencies
+The project relies on the following Flutter packages (add these to pubspec.yaml):
+
+yaml
+
+Collapse
+
+Wrap
+
+Copy
+dependencies:
+  flutter:
+    sdk: flutter
+  get: ^4.6.5          # State management and navigation
+Notes
+Ensure the versions match your Flutter SDK compatibility. Run flutter pub get after updating pubspec.yaml.
+Additional packages (e.g., for animations or leaderboards) may be added as features expand.
+Contributing
+We welcome contributions to make HectoClash even better! Here’s how to get started:
+
+Fork the Repository: Click "Fork" on GitHub.
+Clone Your Fork:
+bash
+
+Collapse
+
+Wrap
+
+Copy
+git clone https://github.com/your-username/hectoclash.git
+Create a Branch:
+bash
+
+Collapse
+
+Wrap
+
+Copy
+git checkout -b feature/your-feature-name
+Make Changes: Implement your feature or fix.
+Commit and Push:
+bash
+
+Collapse
+
+Wrap
+
+Copy
+git add .
+git commit -m "Add your message"
+git push origin feature/your-feature-name
+Submit a Pull Request: Open a PR on GitHub with a clear description.
+Guidelines
+Follow Flutter’s coding style (e.g., use dart format).
+Test on both Android and iOS if possible.
+Document any new features in this README.
+License
+This project is licensed under the MIT License. See the  file for details.
+
+text
+
+Collapse
+
+Wrap
+
+Copy
+MIT License
+
+Copyright (c) 2023 Your Name
+
+Permission is hereby granted, free of charge, to any person obtaining a copy...
+Contact
+Have questions or suggestions? Reach out!
+
+Email: rs602543@gmail.com
+
